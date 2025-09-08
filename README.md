@@ -1,5 +1,9 @@
 # HW 0: Intro to Javascript and WebGL
 
+A simple implementation of a frag and vertex shader affected by noise and time. 
+
+<img width="937" height="691" alt="image" src="https://github.com/user-attachments/assets/25a00166-ce43-4de0-858f-3205be3a39d5" />
+
 <p align="center">
   <img width="360" height="360" src="https://user-images.githubusercontent.com/1758825/132532354-e3a45402-e484-499e-bfa7-2d73b9f2c946.png">
 </p>
