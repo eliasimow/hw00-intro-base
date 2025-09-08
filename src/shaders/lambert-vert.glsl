@@ -49,6 +49,8 @@ void main()
 
 
 
+
+
     vec4 truePos = vec4(sin(u_Time / 100.f) * vs_Pos.x, vs_Pos.y, vs_Pos.z, vs_Pos.w);
     vec4 modelposition = u_Model * truePos;  // Temporarily store the transformed vertex positions for use below
 
