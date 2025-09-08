@@ -28,7 +28,8 @@ class ShaderProgram {
   unifModel: WebGLUniformLocation;
   unifModelInvTr: WebGLUniformLocation;
   unifViewProj: WebGLUniformLocation;
-  unifColor: WebGLUniformLocation;
+    unifColor: WebGLUniformLocation;
+    unifTime: WebGLUniformLocation;
 
   constructor(shaders: Array<Shader>) {
     this.prog = gl.createProgram();
@@ -47,7 +48,8 @@ class ShaderProgram {
     this.unifModel      = gl.getUniformLocation(this.prog, "u_Model");
     this.unifModelInvTr = gl.getUniformLocation(this.prog, "u_ModelInvTr");
     this.unifViewProj   = gl.getUniformLocation(this.prog, "u_ViewProj");
-    this.unifColor      = gl.getUniformLocation(this.prog, "u_Color");
+      this.unifColor = gl.getUniformLocation(this.prog, "u_Color");
+      this.unifTime = gl.getUniformLocation(this.prog, "u_Time");
   }
 
   use() {
@@ -88,6 +90,7 @@ class ShaderProgram {
   draw(d: Drawable) {
     this.use();
 
+    gl.uniform1f(this.unifTime, Date.now() % 10000);
     if (this.attrPos != -1 && d.bindPos()) {
       gl.enableVertexAttribArray(this.attrPos);
       gl.vertexAttribPointer(this.attrPos, 4, gl.FLOAT, false, 0, 0);
